@@ -69,13 +69,21 @@ O **NexusAI** é uma página de apresentação de uma plataforma de agentes de a
 ## 📄 Licença
 Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
+## 💻 Resultado da Landing Page
 
+![image](https://github.com/user-attachments/assets/a1f12718-0313-4e48-8631-f7e2e5bcd24f)
 
+![image](https://github.com/user-attachments/assets/1b2746f1-53fc-4542-b144-78733e29ad80)
 
+![image](https://github.com/user-attachments/assets/af729baf-dbba-4dc6-abef-b9dc1671bc92)
 
+![image](https://github.com/user-attachments/assets/c035e798-518f-40bd-8d56-255616d7b448)
 
+![image](https://github.com/user-attachments/assets/68a87c26-0671-4064-8fbd-2eff2efbef61)
 
+![image](https://github.com/user-attachments/assets/67f55e2b-b5e7-43e3-a90b-76d29a6db2e9)
 
+![image](https://github.com/user-attachments/assets/a35cfbe0-9bb0-4dd1-a8b8-01063185a197)
 
 
 
