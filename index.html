@@ -1,0 +1,677 @@
+<!-- ==========================
+         Projeto desenvolvido por Alan Marques da Rocha
+         dê os devidos créditos dando uma estrela no repositório
+         https://github.com/AlanMarquesRocha/landing_page_nexus_AI
+         ========================== -->
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ajusta escala para dispositivos móveis -->
+    <title>NexusAI - Agentes de Automação Inteligente</title>
+    <!-- Importa o Tailwind CSS via CDN para utilitários de estilo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Importa Font Awesome para ícones -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ==========================
+           Animação de flutuação para imagens ou elementos
+           ========================== */
+        @keyframes float {
+            0%   { transform: translateY(0px); }
+            50%  { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* ==========================
+           Texto com gradiente de cor
+           ========================== */
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* ==========================
+           Fundo com gradiente de fundo
+           ========================== */
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #4c1d95 50%, #831843 100%);
+        }
+
+        /* ==========================
+           Efeito hover em cards (elevação e sombra)
+           ========================== */
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow:
+              0 20px 25px -5px rgba(0, 0, 0, 0.1),
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* ==========================
+           Transição suave para todas as propriedades
+           ========================== */
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <!-- ==========================
+         Navegação (Navbar) fixa no topo
+         ========================== -->
+    <nav class="bg-white shadow-sm fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <!-- Logo e título do site -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-robot text-2xl text-indigo-600 mr-2"></i>
+                        <span class="text-xl font-bold text-gray-900">
+                          Nexus<span class="text-indigo-600">AI</span>
+                        </span>
+                    </div>
+                </div>
+                <!-- Links de navegação (visíveis em desktop) -->
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#features"
+                       class="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">
+                       Recursos
+                    </a>
+                    <a href="#solutions"
+                       class="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">
+                       Soluções
+                    </a>
+                    <a href="#pricing"
+                       class="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">
+                       Preços
+                    </a>
+                    <a href="#testimonials"
+                       class="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">
+                       Depoimentos
+                    </a>
+                </div>
+                <!-- Botão de ação principal -->
+                <div class="flex items-center">
+                    <button
+                      class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all">
+                      Iniciar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================
+         Seção Hero (apresentação principal)
+         ========================== -->
+    <section class="gradient-bg pt-32 pb-20 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <!-- Texto de destaque -->
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1
+                      class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                      Impulsione seu negócio com
+                      <span class="gradient-text">Agentes de Automação de IA</span>
+                    </h1>
+                    <p class="text-xl text-indigo-100 mb-8">
+                      Nossos agentes inteligentes trabalham 24/7 para automatizar seus fluxos de trabalho,
+                      aumentar a produtividade e impulsionar o crescimento com tecnologia de ponta em IA.
+                    </p>
+                    <!-- Botões de ação secundários -->
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button
+                          class="bg-white text-indigo-600 hover:bg-gray-100 px-6 py-3 rounded-md text-lg font-semibold transition-all">
+                          Iniciar avaliação gratuita
+                        </button>
+                        <button
+                          class="border border-white text-white hover:bg-white hover:text-indigo-600 px-6 py-3 rounded-md text-lg font-semibold transition-all">
+                          Assistir demonstração <i class="fas fa-play ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Ilustração com animação de flutuação -->
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <!-- Esferas de fundo com blur -->
+                        <div class="absolute -top-10 -left-10 w-32 h-32 bg-purple-500 rounded-full filter blur-3xl opacity-30"></div>
+                        <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-pink-500 rounded-full filter blur-3xl opacity-30"></div>
+                        <!-- Imagem flutuante representando IA -->
+                        <div class="relative floating">
+                            <img src="https://illustrations.popsy.co/amber/artificial-intelligence.svg"
+                                 alt="Agente de IA"
+                                 class="w-full h-auto">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================
+         Seção "Trusted By" com logos de empresas
+         ========================== -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-gray-500 mb-8">
+              Confiado por empresas inovadoras em todo o mundo
+            </p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                <!-- Cada img representa um logo de empresa parceira -->
+                <img src="https://logo.clearbit.com/google.com?size=80"
+                     alt="Google"
+                     class="h-8 opacity-70 hover:opacity-100 transition-all">
+                <img src="https://logo.clearbit.com/amazon.com?size=80"
+                     alt="Amazon"
+                     class="h-8 opacity-70 hover:opacity-100 transition-all">
+                <img src="https://logo.clearbit.com/microsoft.com?size=80"
+                     alt="Microsoft"
+                     class="h-8 opacity-70 hover:opacity-100 transition-all">
+                <img src="https://logo.clearbit.com/airbnb.com?size=80"
+                     alt="Airbnb"
+                     class="h-8 opacity-70 hover:opacity-100 transition-all">
+                <img src="https://logo.clearbit.com/shopify.com?size=80"
+                     alt="Shopify"
+                     class="h-8 opacity-70 hover:opacity-100 transition-all">
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================
+         Seção de Recursos (Features)
+         ========================== -->
+    <section id="features" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Título e descrição -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Recursos Poderosos para Todas as Necessidades</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Nossos agentes de IA vêm equipados com capacidades avançadas para transformar as operações do seu negócio
+                </p>
+            </div>
+            <!-- Grid de cards de recurso -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1: Automação Cognitiva -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all card-hover">
+                    <div class="w-14 h-14 bg-indigo-50 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-2xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Automação Cognitiva</h3>
+                    <p class="text-gray-600 mb-4">
+                        Agentes entendem contexto, tomam decisões e aprendem com interações como humanos.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Compreensão de linguagem natural</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Tomada de decisões contextualizadas</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Aprendizado contínuo</li>
+                    </ul>
+                </div>
+                <!-- Card 2: Orquestração de Fluxos -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all card-hover">
+                    <div class="w-14 h-14 bg-purple-50 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-random text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Orquestração de Fluxos de Trabalho</h3>
+                    <p class="text-gray-600 mb-4">
+                        Conecte e automatize fluxos complexos entre todas as suas aplicações.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> 500+ integrações de aplicativos</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Lógica condicional</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Tratamento de erros</li>
+                    </ul>
+                </div>
+                <!-- Card 3: Análises Preditivas -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all card-hover">
+                    <div class="w-14 h-14 bg-pink-50 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-2xl text-pink-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Análises Preditivas</h3>
+                    <p class="text-gray-600 mb-4">
+                        Obtenha insights acionáveis e previsões para decisões baseadas em dados.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Análise de tendências</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Detecção de anomalias</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Relatórios personalizados</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================
+         Seção "Como Funciona"
+         ========================== -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Título explicativo -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Como o NexusAI Funciona</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comece com automação inteligente em apenas três passos simples
+                </p>
+            </div>
+            <!-- Passos sequenciais -->
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <!-- Passo 1 -->
+                <div class="flex flex-col items-center text-center mb-10 md:mb-0 md:w-1/3 px-4">
+                    <div class="w-20 h-20 rounded-full bg-indigo-100 flex items-center justify-center mb-6">
+                        <span class="text-2xl font-bold text-indigo-600">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Defina Seus Objetivos</h3>
+                    <p class="text-gray-600">
+                        Diga-nos o que você deseja automatizar. Nosso assistente ajuda a configurar os objetivos do agente.
+                    </p>
+                </div>
+                <!-- Ícone de seta para desktop -->
+                <div class="hidden md:block">
+                    <i class="fas fa-arrow-right text-3xl text-gray-300 mx-4"></i>
+                </div>
+                <!-- Passo 2 -->
+                <div class="flex flex-col items-center text-center mb-10 md:mb-0 md:w-1/3 px-4">
+                    <div class="w-20 h-20 rounded-full bg-purple-100 flex items-center justify-center mb-6">
+                        <span class="text-2xl font-bold text-purple-600">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Conecte Seus Sistemas</h3>
+                    <p class="text-gray-600">
+                        Integre com suas ferramentas e bancos de dados existentes. Trabalhamos com o que você já usa.
+                    </p>
+                </div>
+                <!-- Ícone de seta para desktop -->
+                <div class="hidden md:block">
+                    <i class="fas fa-arrow-right text-3xl text-gray-300 mx-4"></i>
+                </div>
+                <!-- Passo 3 -->
+                <div class="flex flex-col items-center text-center md:w-1/3 px-4">
+                    <div class="w-20 h-20 rounded-full bg-pink-100 flex items-center justify-center mb-6">
+                        <span class="text-2xl font-bold text-pink-600">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Deixe o Agente Trabalhar</h3>
+                    <p class="text-gray-600">
+                        Seu agente de IA começa a executar tarefas, aprender e melhorar ao longo do tempo.
+                        Monitore o progresso em tempo real.
+                    </p>
+                </div>
+            </div>
+            <!-- Botão para ver demonstração -->
+            <div class="mt-16 text-center">
+                <button
+                  class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-md text-lg font-semibold transition-all">
+                  Ver em ação <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================
+         Seção de Soluções por Setor
+         ========================== -->
+    <section id="solutions" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Título da seção -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Soluções por Setor</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Automação de IA sob medida para as necessidades do seu negócio
+                </p>
+            </div>
+            <!-- Grid de soluções -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Solução 1: Comércio Eletrônico -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all card-hover">
+                    <div class="h-40 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-shopping-cart text-5xl text-blue-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Comércio Eletrônico</h3>
+                        <p class="text-gray-600 mb-4">
+                            Automatize estoque, atendimento ao cliente e recomendações personalizadas.
+                        </p>
+                        <a href="#" class="text-indigo-600 font-medium inline-flex items-center">
+                            Saiba mais <i class="fas fa-chevron-right ml-1 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Solução 2: Saúde -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all card-hover">
+                    <div class="h-40 bg-green-100 flex items-center justify-center">
+                        <i class="fas fa-heartbeat text-5xl text-green-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Saúde</h3>
+                        <p class="text-gray-600 mb-4">
+                            Agendamento de pacientes, gestão de prontuários e suporte diagnóstico.
+                        </p>
+                        <a href="#" class="text-indigo-600 font-medium inline-flex items-center">
+                            Saiba mais <i class="fas fa-chevron-right ml-1 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Solução 3: Finanças -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all card-hover">
+                    <div class="h-40 bg-yellow-100 flex items-center justify-center">
+                        <i class="fas fa-university text-5xl text-yellow-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Finanças</h3>
+                        <p class="text-gray-600 mb-4">
+                            Detecção de fraudes, avaliação de riscos e relatórios automatizados.
+                        </p>
+                        <a href="#" class="text-indigo-600 font-medium inline-flex items-center">
+                            Saiba mais <i class="fas fa-chevron-right ml-1 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Solução 4: Educação -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all card-hover">
+                    <div class="h-40 bg-purple-100 flex items-center justify-center">
+                        <i class="fas fa-chalkboard-teacher text-5xl text-purple-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Educação</h3>
+                        <p class="text-gray-600 mb-4">
+                            Aprendizado personalizado, automação de correção e suporte ao aluno.
+                        </p>
+                        <a href="#" class="text-indigo-600 font-medium inline-flex items-center">
+                            Saiba mais <i class="fas fa-chevron-right ml-1 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================
+         Seção de Depoimentos (Testimonials)
+         ========================== -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Cabeçalho de depoimentos -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">O Que Nossos Clientes Dizem</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Não acredite só em nós — veja o que nossos clientes dizem
+                </p>
+            </div>
+            <!-- Grid de depoimentos -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Depoimento 1 -->
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/43.jpg"
+                             alt="Sarah Johnson"
+                             class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Sarah Johnson</h4>
+                            <p class="text-gray-600 text-sm">CEO, TechSolutions Inc.</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6">
+                        "NexusAI transformou completamente nosso atendimento ao cliente. Reduzimos o
+                        tempo de resposta em 80% e a satisfação disparou. Os agentes lidam com 70%
+                        das consultas rotineiras, liberando nossa equipe para casos complexos."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <!-- Depoimento 2 -->
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg"
+                             alt="Michael Chen"
+                             class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Michael Chen</h4>
+                            <p class="text-gray-600 text-sm">COO, Global Retail Group</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6">
+                        "Os agentes de gestão de inventário nos economizaram mais de $2M no primeiro ano
+                        ao otimizar nossa cadeia de suprimentos. As análises preditivas são muito precisas
+                        e o sistema melhora continuamente."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================
+         Seção de Preços (Pricing)
+         ========================== -->
+    <section id="pricing" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Título de preços -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Preços Simples e Transparentes</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Escolha o plano que se ajusta às suas necessidades. Escale conforme o crescimento.
+                </p>
+            </div>
+            <!-- Grid de planos -->
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Plano Iniciante -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all hover:shadow-lg">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold mb-2">Iniciante</h3>
+                        <p class="text-gray-600 mb-6">Ideal para equipes pequenas e startups</p>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$99</span>
+                            <span class="text-gray-600">/mês</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 5 Agentes de IA</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 10.000 tarefas/mês</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Integrações básicas</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Suporte por e-mail</li>
+                        </ul>
+                        <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 rounded-md font-medium transition-all">
+                            Iniciar
+                        </button>
+                    </div>
+                </div>
+                <!-- Plano Profissional (mais popular) -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border-2 border-indigo-500 transform scale-105 z-10">
+                    <div class="bg-indigo-500 text-white text-center py-2">
+                        <span class="text-sm font-semibold">MAIS POPULAR</span>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold mb-2">Profissional</h3>
+                        <p class="text-gray-600 mb-6">Para empresas em crescimento</p>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$499</span>
+                            <span class="text-gray-600">/mês</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 20 Agentes de IA</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 50.000 tarefas/mês</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Integrações avançadas</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Suporte prioritário</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Workflows personalizados</li>
+                        </ul>
+                        <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-md font-medium transition-all">
+                            Iniciar
+                        </button>
+                    </div>
+                </div>
+                <!-- Plano Empresarial -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all hover:shadow-lg">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold mb-2">Empresarial</h3>
+                        <p class="text-gray-600 mb-6">Para grandes organizações</p>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">Customizado</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Agentes ilimitados</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Tarefas ilimitadas</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Todas as integrações</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Suporte dedicado 24/7</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Modelos de IA personalizados</li>
+                        </ul>
+                        <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 rounded-md font-medium transition-all">
+                            Fale com Vendas
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Link para soluções personalizadas -->
+            <div class="mt-12 text-center">
+                <p class="text-gray-600">
+                    Precisa de algo diferente? <a href="#" class="text-indigo-600 font-medium">Fale conosco</a> para soluções personalizadas.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================
+         Seção CTA final (Call To Action)
+         ========================== -->
+    <section class="py-20 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronto para Transformar Seu Negócio com IA?</h2>
+            <p class="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">
+                Junte-se a milhares de empresas automatizando seus fluxos de trabalho com NexusAI.
+                Comece sua avaliação gratuita de 14 dias hoje.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button class="bg-white text-indigo-600 hover:bg-gray-100 px-8 py-4 rounded-md text-lg font-semibold transition-all">
+                    Iniciar avaliação gratuita
+                </button>
+                <button class="border border-white text-white hover:bg-white hover:text-indigo-600 px-8 py-4 rounded-md text-lg font-semibold transition-all">
+                    Agendar demonstração
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================
+         Footer com informações da empresa
+         ========================== -->
+    <footer class="bg-gray-900 text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+                <!-- Bloco principal com logo e descrição -->
+                <div class="col-span-2">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-robot text-2xl text-indigo-500 mr-2"></i>
+                        <span class="text-xl font-bold text-white">
+                          Nexus<span class="text-indigo-500">AI</span>
+                        </span>
+                    </div>
+                    <p class="mb-6">
+                        Capacitando negócios com soluções de automação inteligente
+                        movidas por inteligência artificial.
+                    </p>
+                    <!-- Ícones de redes sociais -->
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-github text-xl"></i></a>
+                    </div>
+                </div>
+                <!-- Coluna Produto -->
+                <div>
+                    <h3 class="text-white text-sm font-semibold tracking-wider uppercase mb-4">Produto</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-white">Recursos</a></li>
+                        <li><a href="#" class="hover:text-white">Preços</a></li>
+                        <li><a href="#" class="hover:text-white">Soluções</a></li>
+                        <li><a href="#" class="hover:text-white">Demonstração</a></li>
+                    </ul>
+                </div>
+                <!-- Coluna Recursos -->
+                <div>
+                    <h3 class="text-white text-sm font-semibold tracking-wider uppercase mb-4">Recursos</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-white">Documentação</a></li>
+                        <li><a href="#" class="hover:text-white">Guias</a></li>
+                        <li><a href="#" class="hover:text-white">Blog</a></li>
+                        <li><a href="#" class="hover:text-white">Status da API</a></li>
+                    </ul>
+                </div>
+                <!-- Coluna Empresa -->
+                <div>
+                    <h3 class="text-white text-sm font-semibold tracking-wider uppercase mb-4">Empresa</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-white">Sobre</a></li>
+                        <li><a href="#" class="hover:text-white">Carreiras</a></li>
+                        <li><a href="#" class="hover:text-white">Privacidade</a></li>
+                        <li><a href="#" class="hover:text-white">Termos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Linha de copyright e idioma -->
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm">&copy; 2023 NexusAI. Todos os direitos reservados.</p>
+                <div class="mt-4 md:mt-0">
+                    <p class="text-sm"><i class="fas fa-globe-americas mr-1"></i> Português (Brasil)</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================
+         Scripts JavaScript
+         - Smooth scroll para âncoras
+         - Intersection Observer para animações de entrada
+         ========================== -->
+    <script>
+        // Scroll suave ao clicar em links de âncora
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Configuração do Intersection Observer
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Adiciona classe para animar quando o elemento aparece na viewport
+                    entry.target.classList.add('animate-fadeIn');
+                }
+            });
+        }, observerOptions);
+
+        // Observa todos os cards que possuem efeito hover
+        document.querySelectorAll('.card-hover').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
+
+<!-- ==========================
+         Projeto desenvolvido por Alan Marques da Rocha
+         dê os devidos créditos dando uma estrela no repositório
+         https://github.com/AlanMarquesRocha/landing_page_nexus_AI
+         ========================== -->
