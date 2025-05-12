@@ -3,7 +3,7 @@
 ![image](https://github.com/user-attachments/assets/9e271231-bc95-4ce4-838c-054c197c8d39)
 
 
-## Descrição
+## Descrição do Projeto
 
 O **NexusAI** é uma página de apresentação de uma plataforma de agentes de automação inteligente. Através de agentes 24/7 com IA avançada, o NexusAI automatiza fluxos de trabalho, melhora a produtividade e fornece análises preditivas para impulsionar o crescimento do seu negócio.
 
