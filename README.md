@@ -1,4 +1,4 @@
-# NexusAI - Intelligent Automation Agents
+# NexusAI - Intelligent Automation Agents (Em construção)
 
 ![image](https://github.com/user-attachments/assets/9e271231-bc95-4ce4-838c-054c197c8d39)
 
