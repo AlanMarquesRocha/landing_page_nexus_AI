@@ -7,7 +7,7 @@
 ---
 
 <h3 align="center"> 
-	 🚀 Em construção 🚀 
+	 🚀 (Em construção) 🚀 
 </h3>
 
 ---
